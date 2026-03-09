@@ -1,0 +1,43 @@
+# Query: const res = await 
+# ContextLines: 1
+
+9 results - 3 files
+
+DETAILED_CHANGES.md:
+  58    try {
+  59:     const res = await fetch(`${import.meta.env.VITE_BACKEND_URL || ''}/api/v1/appointment/post`, {
+  60        // ...
+
+  97      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+  98:     const res = await fetch(`${backendUrl}/api/v1/appointment/post`, {
+  99        method: 'POST',
+
+SMART_BOOKING_ENHANCEMENT.md:
+  103  try {
+  104:   const res = await fetch(...);
+  105    if (!res.ok) {
+
+frontend\src\components\AIAssistant.jsx:
+   24  const groqGenerateStream = async (prompt, onChunk) => {
+   25: const res = await fetch(GROQ_ENDPOINT, {
+   26    method: "POST",
+
+  163            const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+  164:           const res = await fetch(`${backendUrl}/api/v1/appointment/slots/${appointmentData.appointmentDate}`);
+  165            const body = await res.json();
+
+  211          console.log('AIAssistant: fetching doctors from', backendUrl + '/api/v1/user/doctors');
+  212:         const res = await fetch(`${backendUrl}/api/v1/user/doctors`, {
+  213            method: 'GET',
+
+  312        const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+  313:       const res = await fetch(`${backendUrl}/api/v1/appointment/post`, {
+  314          method: 'POST',
+
+  483      try {
+  484:       const res = await fetch(`${BACKEND_URL}/api/v1/ai/chat`, {
+  485          method: "POST",
+
+  559        const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+  560:       const res = await fetch(`${backendUrl}/api/v1/appointment/history`, {
+  561          method: 'GET',
