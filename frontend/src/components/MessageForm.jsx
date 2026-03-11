@@ -13,8 +13,8 @@ const MessageForm = () => {
     e.preventDefault();
     try {
       await axios
-        .post(
-          "http://localhost:5000/api/v1/message/send",
+       .post(
+  `${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"}/api/v1/message/send`,
           { firstName, lastName, email, phone, message },
           {
             withCredentials: true,

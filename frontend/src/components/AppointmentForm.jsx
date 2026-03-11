@@ -83,7 +83,7 @@ const AppointmentForm = () => {
       const fetchBookedSlots = async () => {
         try {
           const { data } = await axios.get(
-            `http://localhost:5000/api/v1/appointment/slots/${appointmentDate}`,
+              `${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"}/api/v1/appointment/slots/${appointmentDate}`,
             { withCredentials: true }
           );
           setBookedSlots(data.bookedTimes || []);
@@ -132,9 +132,9 @@ const AppointmentForm = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/v1/user/doctors",
-          { withCredentials: true }
-        );
+  `${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"}/api/v1/user/doctors`,
+  { withCredentials: true }
+);
         // filter out removed doctors
         const cleaned = data.doctors.filter(d => !["riya.verma@vitalcare.com","arjun.mehta@vitalcare.com","neha.agarwal@vitalcare.com"].includes(d.email));
         setDoctors(cleaned);
@@ -199,7 +199,7 @@ const AppointmentForm = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/appointment/post",
+          `${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"}/api/v1/appointment/post`,
         {
           firstName: firstName.trim(),
           lastName: lastName.trim(),
